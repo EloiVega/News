@@ -1,0 +1,15 @@
+.navLogo{
+    font-weight: bold;
+    font-size: 22px;
+
+    text-shadow: 0.1px 0.1px 3px yellow;
+}
+.link {
+  color: #ffc10798 !important;
+}
+
+.link.active {
+  font-weight: bold;
+  color: #ffc107 !important;
+  /* font-size: 18px; */
+}
