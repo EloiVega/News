@@ -1,19 +1,30 @@
 import Card from "../UI/Card";
 
 export default function Home({ posts }) {
-  console.log(posts);
+  // console.log(posts);
   let List = [];
-  if (posts.status !== 'error') {
+  if (posts.status !== "error") {
     List = posts.articles.map((item) => (
-      <div className="col-md-6 mt-4 col-lg-4">
-        <Card
-          title={item.title}
-          description={item.description}
-          originUrl={item.url}
-          imageUrl={item.urlToImage}
-        />
-      </div>
+      // <div className="col-md-6 mt-4 col-lg-4">
+      <Card
+        key={Math.random()}
+        title={posts.articles[0].title}
+        description={posts.articles[0].description}
+        originUrl={posts.articles[0].url}
+        imageUrl={posts.articles[0].urlToImage}
+      />
+      // </div>
     ));
+
+    // List = (
+    //   <Card
+    //     key={Math.random()}
+    //     title={posts.articles[0].title}
+    //     description={posts.articles[0].description}
+    //     originUrl={posts.articles[0].url}
+    //     imageUrl={posts.articles[0].urlToImage}
+    //   />
+    // );
   }
   console.log(List);
 
@@ -27,7 +38,9 @@ export default function Home({ posts }) {
             imageUrl="https://cdn.vox-cdn.com/thumbor/OYrvaaOHBuEpdTeRO55nZnZdexs=/0x215:3000x1786/fit-in/1200x630/cdn.vox-cdn.com/uploads/chorus_asset/file/8937281/acastro_170726_1777_0007_v2.jpg"
           ></Card> */}
         {List.length > 0 && List}
-        {List.length === 0 && <p className="text-warning">No articles found :(</p>}
+        {List.length === 0 && (
+          <p className="text-warning">No articles found :</p>
+        )}
       </div>
     </div>
   );
