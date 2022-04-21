@@ -5,14 +5,13 @@ export default function Home({ posts }) {
   let List = [];
   if (posts.status !== "error") {
     List = posts.articles.map((item) => (
-      <div className="col-md-6 mt-4 col-lg-4">
-      <Card
-        key={Math.random()}
-        title={item.title}
-        description={item.description}
-        originUrl={item.url}
-        imageUrl={item.urlToImage}
-      />
+      <div key={Math.random()} className="col-md-6 mt-4 col-lg-4">
+        <Card
+          title={item.title}
+          description={item.description}
+          originUrl={item.url}
+          imageUrl={item.urlToImage}
+        />
       </div>
     ));
 
