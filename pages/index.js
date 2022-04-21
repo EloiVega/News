@@ -5,15 +5,15 @@ export default function Home({ posts }) {
   let List = [];
   if (posts.status !== "error") {
     List = posts.articles.map((item) => (
-      // <div className="col-md-6 mt-4 col-lg-4">
+      <div className="col-md-6 mt-4 col-lg-4">
       <Card
         key={Math.random()}
-        title={posts.articles[0].title}
-        description={posts.articles[0].description}
-        originUrl={posts.articles[0].url}
-        imageUrl={posts.articles[0].urlToImage}
+        title={item.title}
+        description={item.description}
+        originUrl={item.url}
+        imageUrl={item.urlToImage}
       />
-      // </div>
+      </div>
     ));
 
     // List = (
